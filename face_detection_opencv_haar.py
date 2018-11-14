@@ -31,11 +31,12 @@ def detectFaceOpenCVHaar(faceCascade, frame, inHeight=300, inWidth=0):
     return frameOpenCVHaar, bboxes
 
 if __name__ == "__main__" :
-    source = 0
+    #source = 0
+    source = "videos/baby.mp4"
     if len(sys.argv) > 1:
         source = sys.argv[1]
 
-    faceCascade = cv2.CascadeClassifier('./haarcascade_frontalface_default.xml')
+    faceCascade = cv2.CascadeClassifier('models/haarcascade_frontalface_default.xml')
 
     cap = cv2.VideoCapture(source)
     hasFrame, frame = cap.read()
@@ -63,7 +64,7 @@ if __name__ == "__main__" :
         vid_writer.write(outOpencvHaar)
         if frame_count == 1:
             tt_opencvHaar = 0
-        
+
         k = cv2.waitKey(10)
         if k == 27:
             break

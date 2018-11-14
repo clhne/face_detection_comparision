@@ -133,13 +133,13 @@ def detectFaceDlibMMOD(detector, frame, inHeight=300, inWidth=0):
     return frameDlibMMOD, bboxes
 
 
-#source = 0
-source = "neck.mp4"
+source = 0
+#source = "neck.mp4"
 if len(sys.argv) > 1:
     source = sys.argv[1]
 
-cap = cv2.VideoCapture(source)
-#cap = cv2.VideoCapture("videos/baby.mp4")
+# cap = cv2.VideoCapture(source)
+cap = cv2.VideoCapture("videos/rowing.mp4")
 hasFrame, frame = cap.read()
 cv2.namedWindow("Face Detection Comparison", cv2.WINDOW_NORMAL)
 

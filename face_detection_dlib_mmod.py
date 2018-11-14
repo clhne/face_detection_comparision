@@ -35,10 +35,11 @@ if __name__ == "__main__" :
     if len(sys.argv) > 1:
         source = sys.argv[1]
 
-    cap = cv2.VideoCapture(source)
+    # cap = cv2.VideoCapture(source)
+    cap = cv2.VideoCapture("videos/baby.mp4")
     hasFrame, frame = cap.read()
 
-    dnnFaceDetector = dlib.cnn_face_detection_model_v1("./mmod_human_face_detector.dat")
+    dnnFaceDetector = dlib.cnn_face_detection_model_v1("models/mmod_human_face_detector.dat")
 
     vid_writer = cv2.VideoWriter('output-mmod-{}.avi'.format(str(source).split(".")[0]),cv2.VideoWriter_fourcc('M','J','P','G'), 15, (frame.shape[1],frame.shape[0]))
 
